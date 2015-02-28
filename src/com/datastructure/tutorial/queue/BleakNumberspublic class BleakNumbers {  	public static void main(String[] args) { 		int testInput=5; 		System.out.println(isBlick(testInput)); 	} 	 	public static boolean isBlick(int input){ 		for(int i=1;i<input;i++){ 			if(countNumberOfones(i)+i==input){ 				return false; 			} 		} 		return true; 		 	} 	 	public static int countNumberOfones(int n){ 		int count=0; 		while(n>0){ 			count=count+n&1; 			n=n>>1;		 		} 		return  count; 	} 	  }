@@ -1,0 +1,28 @@
+public class BleakNumbers {
+
+	public static void main(String[] args) {
+		int testInput=5;
+		System.out.println(isBlick(testInput));
+	}
+	
+	public static boolean isBlick(int input){
+		for(int i=1;i<input;i++){
+			if(countNumberOfones(i)+i==input){
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	
+	public static int countNumberOfones(int n){
+		int count=0;
+		while(n>0){
+			count=count+n&1;
+			n=n>>1;		
+		}
+		return  count;
+	}
+	
+
+}
